@@ -36,6 +36,8 @@ jobs:
           echo "Ref: ${{ github.ref }}"
           echo "Event: ${{ github.event_name }}"
           echo "Actor: ${{ github.actor }}"
+          echo "Repository owner ID: ${{ github.repository_owner_id }}"
+          echo "Repository ID: ${{ github.repository_id }}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

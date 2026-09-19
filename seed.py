@@ -18,7 +18,7 @@ def seed_database():
         db.create_all()
 
         # Check if already seeded
-        if User.query.filter_by(email="admin@portal.edu").first():
+        if User.query.filter_by(email="admin@gmail.com").first():
             print("Database already contains seed data. Exiting.")
             return
 
@@ -187,7 +187,7 @@ def seed_database():
         print("✅ Database seeding completed successfully!")
         print("--------------------------------------------------")
         print("Credentials for testing:")
-        print("Admin:   admin@portal.edu    / Admin@12345")
+        print("Admin:   admin@gmail.com    / Admin@12345")
         print("Student: alex@portal.edu     / Student@12345 (in Team 1, waiting for 1 more!)")
         print("Student: elena@portal.edu    / Student@12345 (ready to join Team 1 & trigger FULL lock!)")
         print("--------------------------------------------------")

@@ -1,0 +1,52 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "assignment-backend",
+      "image": "451782721795.dkr.ecr.eu-north-1.amazonaws.com/assignment-backend:v3",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "name": "backend"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "REDIS_URL",
+          "value": "rediss://assignment-redis-i1ktey.serverless.eun1.cache.amazonaws.com:6379/0"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "DATABASE_URL",
+          "valueFrom": "arn:aws:secretsmanager:eu-north-1:451782721795:secret:assignment/rds/database-url-GWOa2B"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/assignment-backend",
+          "awslogs-region": "eu-north-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "assignment-backend",
+  "taskRoleArn": "arn:aws:iam::451782721795:role/assignmentECSTaskRole",
+  "executionRoleArn": "arn:aws:iam::451782721795:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024"
+}

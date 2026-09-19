@@ -29,4 +29,18 @@ Thumbs.db
 
 # Node (if frontend exists)
 node_modules/
-dist/
+dist/ecs-task-definition-full.json
+
+# AWS lab temporary task definitions
+ecs-task-definition-full.json
+backend-task-definition*.json
+backend-task*.json
+frontend-task-def*.json
+frontend-task-definition*.json
+service-connect.json
+trust-policy.json
+ecs-task-trust-policy.json
+github-actions-trust-policy.json
+github-actions-deploy-policy.json
+sns-lab-policy.json
+.backend-task-definition-v2.json.swp

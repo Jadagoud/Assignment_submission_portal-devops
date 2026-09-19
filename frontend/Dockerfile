@@ -2,11 +2,8 @@ FROM nginx:1.27-alpine
 
 WORKDIR /usr/share/nginx/html
 
-# Static assets
-COPY static/ ./static/
-
-# Optional custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY frontend/static/ ./static/
+COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 

@@ -29,7 +29,6 @@ Thumbs.db
 
 # Node (if frontend exists)
 node_modules/
-dist/ecs-task-definition-full.json
 
 # AWS lab temporary task definitions
 ecs-task-definition-full.json

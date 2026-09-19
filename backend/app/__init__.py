@@ -58,3 +58,4 @@ def create_app(config_name=None) -> Flask:
 
     logger.info(f"Initialized {app.config.get('APP_NAME')} with config '{config_name}'")
     return app
+
